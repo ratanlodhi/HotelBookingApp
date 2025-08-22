@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Hotel className="h-8 w-8 text-blue-400" />
-              <span className="text-2xl font-bold">StayEasy</span>
+              <span className="text-2xl font-bold">stayeasyhotel</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               Your trusted partner for finding the perfect accommodation. 
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-blue-400" />
-                <span className="text-gray-300">support@stayeasy.com</span>
+                <span className="text-gray-300">support@stayeasyhotel.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-blue-400" />
@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-300">
-            © 2024 StayEasy Hotel Booking System. All rights reserved.
+            © 2024 stayeasyhotel Hotel Booking System. All rights reserved.
           </p>
         </div>
       </div>

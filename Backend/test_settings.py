@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 def setup_django():
     """Set up Django environment"""
     # Set the Django settings module (strip any trailing spaces)
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'stayeasy.settings'.strip())
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'stayeasyhotel.settings'.strip())
     
     try:
         import django

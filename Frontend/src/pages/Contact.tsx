@@ -64,7 +64,7 @@ const Contact: React.FC = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      content: "support@stayeasy.com",
+      content: "support@stayeasyhotel.com",
       subContent: "We reply within 24 hours"
     },
     {
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
     },
     {
       question: "How do I contact customer support?",
-      answer: "You can reach us through this contact form, email us at support@stayeasy.com, or call us at +1 (555) 123-4567 during business hours."
+      answer: "You can reach us through this contact form, email us at support@stayeasyhotel.com, or call us at +1 (555) 123-4567 during business hours."
     }
   ];
 
@@ -272,7 +272,7 @@ const Contact: React.FC = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Find answers to common questions about StayEasy
+              Find answers to common questions about stayeasyhotel
             </p>
           </div>
           
@@ -309,7 +309,7 @@ const Contact: React.FC = () => {
             <div className="text-center p-6 bg-blue-50 rounded-lg">
               <MailIcon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-gray-800 mb-2">Email Support</h3>
-              <p className="text-gray-600 mb-2">support@stayeasy.com</p>
+              <p className="text-gray-600 mb-2">support@stayeasyhotel.com</p>
               <p className="text-sm text-gray-500">Response within 2 hours</p>
             </div>
             

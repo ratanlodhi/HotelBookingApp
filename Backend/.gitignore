@@ -1,4 +1,4 @@
-# Django/Python .gitignore for StayEasy Backend
+# Django/Python .gitignore for stayeasyhotel Backend
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

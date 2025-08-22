@@ -67,7 +67,7 @@ const About: React.FC = () => {
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About StayEasy
+            About stayeasyhotel
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             Making travel booking simple, secure, and enjoyable for everyone
@@ -84,7 +84,7 @@ const About: React.FC = () => {
                 Our Mission
               </h2>
               <p className="text-lg text-gray-600 mb-4">
-                At StayEasy, we believe that finding the perfect accommodation should be as 
+                At stayeasyhotel, we believe that finding the perfect accommodation should be as 
                 enjoyable as the journey itself. Founded in 2020, we've been on a mission to 
                 revolutionize the way people book hotels worldwide.
               </p>
@@ -147,7 +147,7 @@ const About: React.FC = () => {
               Meet Our Team
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The passionate people behind StayEasy
+              The passionate people behind stayeasyhotel
             </p>
           </div>
           
@@ -186,7 +186,7 @@ const About: React.FC = () => {
                 <div className="flex-1 text-right pr-8">
                   <div className="bg-blue-100 p-4 rounded-lg">
                     <h3 className="font-semibold text-gray-800">2020</h3>
-                    <p className="text-gray-600">StayEasy Founded</p>
+                    <p className="text-gray-600">stayeasyhotel Founded</p>
                   </div>
                 </div>
                 <div className="w-4 h-4 bg-blue-600 rounded-full relative z-10"></div>
@@ -237,7 +237,7 @@ const About: React.FC = () => {
             Join Our Story
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Be part of the StayEasy community and experience travel booking like never before
+            Be part of the stayeasyhotel community and experience travel booking like never before
           </p>
           <Link
             to="/hotels"

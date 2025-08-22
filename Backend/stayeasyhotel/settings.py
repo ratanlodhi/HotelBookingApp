@@ -3,7 +3,7 @@ from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ROOT_URLCONF = "stayeasy.urls"
+ROOT_URLCONF = "stayeasyhotel.urls"
 
 SECRET_KEY = "your-secret-key"
 
@@ -100,7 +100,7 @@ TEMPLATES = [
 ]
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [BASE_DIR / "static"]
+#STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MEDIA_URL = "/media/"

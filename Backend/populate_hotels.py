@@ -5,7 +5,7 @@ import sys
 
 # Add the project directory to the Python path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'stayeasy.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'stayeasyhotel.settings')
 django.setup()
 
 from api.models import Hotel, Room
@@ -100,81 +100,4 @@ def populate_hotels():
             'rooms': [
                 {'room_type': 'Standard Room', 'price_per_night': 179.00, 'capacity': 2, 'amenities': ['WiFi', 'TV', 'Work Desk', 'Coffee Maker'], 'image': 'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=400'},
                 {'room_type': 'Business Room', 'price_per_night': 229.00, 'capacity': 2, 'amenities': ['WiFi', 'TV', 'Work Desk', 'Coffee Maker', 'Printer'], 'image': 'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=400'},
-                {'room_type': 'Executive Room', 'price_per_night': 329.00, 'capacity': 3, 'amenities': ['WiFi', 'TV', 'Work Desk', 'Coffee Maker', 'Mini Bar', 'Lounge Access'], 'image': 'https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=400'},
-            ]
-        },
-        {
-            'name': 'Historic Inn',
-            'description': 'Charming historic hotel with classic architecture',
-            'location': 'Boston, MA',
-            'rating': 4.5,
-            'amenities': ['WiFi', 'Restaurant', 'Library', 'Concierge'],
-            'image': 'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'images': [
-                'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800'
-            ],
-            'phone': '+1 (555) 567-8901',
-            'email': 'bookings@historicinn.com',
-            'address': '654 Beacon Street, Boston, MA 02215',
-            'rooms': [
-                {'room_type': 'Classic Room', 'price_per_night': 149.00, 'capacity': 2, 'amenities': ['WiFi', 'TV', 'Antique Furniture', 'Coffee Maker'], 'image': 'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=400'},
-                {'room_type': 'Heritage Room', 'price_per_night': 199.00, 'capacity': 3, 'amenities': ['WiFi', 'TV', 'Antique Furniture', 'Coffee Maker', 'Fireplace'], 'image': 'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=400'},
-                {'room_type': 'Master Suite', 'price_per_night': 299.00, 'capacity': 4, 'amenities': ['WiFi', 'TV', 'Antique Furniture', 'Coffee Maker', 'Fireplace', 'Sitting Area'], 'image': 'https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=400'},
-            ]
-        },
-        {
-            'name': 'Desert Oasis',
-            'description': 'Relaxing desert resort with stunning sunset views',
-            'location': 'Phoenix, AZ',
-            'rating': 4.3,
-            'amenities': ['WiFi', 'Pool', 'Spa', 'Golf Course', 'Restaurant'],
-            'image': 'https://images.pexels.com/photos/2506988/pexels-photo-2506988.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'images': [
-                'https://images.pexels.com/photos/2506988/pexels-photo-2506988.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=800',
-                'https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=800'
-            ],
-            'phone': '+1 (555) 678-9012',
-            'email': 'reservations@desertoasis.com',
-            'address': '987 Desert Road, Phoenix, AZ 85001',
-            'rooms': [
-                {'room_type': 'Desert View Room', 'price_per_night': 129.00, 'capacity': 2, 'amenities': ['WiFi', 'TV', 'Desert View', 'Coffee Maker'], 'image': 'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=400'},
-                {'room_type': 'Poolside Room', 'price_per_night': 159.00, 'capacity': 3, 'amenities': ['WiFi', 'TV', 'Pool Access', 'Coffee Maker', 'Patio'], 'image': 'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=400'},
-                {'room_type': 'Luxury Villa', 'price_per_night': 359.00, 'capacity': 6, 'amenities': ['WiFi', 'TV', 'Private Pool', 'Full Kitchen', 'Outdoor Dining', 'Spa Access'], 'image': 'https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=400'},
-            ]
-        }
-    ]
-    
-    # Create hotels and rooms
-    for hotel_data in hotels_data:
-        hotel = Hotel.objects.create(
-            name=hotel_data['name'],
-            description=hotel_data['description'],
-            location=hotel_data['location'],
-            rating=hotel_data['rating'],
-            amenities=hotel_data['amenities'],
-            image=hotel_data['image'],
-            images=hotel_data['images'],
-            phone=hotel_data['phone'],
-            email=hotel_data['email'],
-            address=hotel_data['address']
-        )
-        
-        for room_data in hotel_data['rooms']:
-            Room.objects.create(
-                hotel=hotel,
-                room_type=room_data['room_type'],
-                price_per_night=room_data['price_per_night'],
-                capacity=room_data['capacity'],
-                amenities=room_data['amenities'],
-                image=room_data['image']
-            )
-        
-        print(f"Created hotel: {hotel.name} with {len(hotel_data['rooms'])} rooms")
-    
-    print(f"\nSuccessfully populated database with {len(hotels_data)} hotels!")
-
-if __name__ == '__main__':
-    populate_hotels()
+                {'room_type': 'Executive Room', 'price_per_night': 329.00, 'capacity': 3, 'amenities': ['WiFi', 'TV', 'Work Desk', 'Coffee Maker', 'Mini Bar', 'Lounge Access'], 'image': 'https://

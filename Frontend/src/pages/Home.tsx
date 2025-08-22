@@ -126,7 +126,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Why Choose StayEasy?
+              Why Choose stayeasyhotel?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We make hotel booking simple, secure, and rewarding
@@ -246,7 +246,7 @@ const Home: React.FC = () => {
             Ready to Start Your Journey?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join millions of travelers who trust StayEasy for their accommodation needs
+            Join millions of travelers who trust stayeasyhotel for their accommodation needs
           </p>
           <button
             onClick={() => navigate('/hotels')}
