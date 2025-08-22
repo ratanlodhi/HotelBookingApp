@@ -3,7 +3,7 @@ anyio==4.10.0
 asgiref==3.9.1
 certifi==2025.8.3
 deprecation==2.1.0
-Django==5.2.5
+Django>=5.0,<6.0
 django-cors-headers==4.7.0
 djangorestframework==3.16.1
 djangorestframework_simplejwt==5.5.1
@@ -35,3 +35,4 @@ typing_extensions==4.14.1
 tzdata==2025.2
 websockets==15.0.1
 gunicorn
+whitenoise
