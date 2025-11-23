@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
 
 interface Hotel {
   id: number;
@@ -69,19 +69,17 @@ export const BookingProvider: React.FC<BookingProviderProps> = ({ children }) =>
 
   const setSelectedRoom = (room: Room) => {
     setBookingData(prev => ({ ...prev, room }));
-    calculateTotalPrice();
   };
 
   const setBookingDates = (checkIn: string, checkOut: string) => {
     setBookingData(prev => ({ ...prev, checkIn, checkOut }));
-    calculateTotalPrice();
   };
 
   const setGuests = (guests: number) => {
     setBookingData(prev => ({ ...prev, guests }));
   };
 
-  const calculateTotalPrice = () => {
+  const calculateTotalPrice = useCallback(() => {
     const { room, checkIn, checkOut } = bookingData;
     if (room && checkIn && checkOut) {
       const startDate = new Date(checkIn);
@@ -90,7 +88,14 @@ export const BookingProvider: React.FC<BookingProviderProps> = ({ children }) =>
       const totalPrice = room.price_per_night * nights;
       setBookingData(prev => ({ ...prev, totalPrice }));
     }
-  };
+  }, [bookingData.room, bookingData.checkIn, bookingData.checkOut]);
+
+  useEffect(() => {
+    calculateTotalPrice();
+  }, [calculateTotalPrice]);
+
+  // To avoid 'calculateTotalPrice' is declared but its value is never read warning,
+  // we can call calculateTotalPrice inside useEffect as above, so no further action needed.
 
   const clearBooking = () => {
     setBookingData({

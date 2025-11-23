@@ -1,15 +1,20 @@
+import os
 from pathlib import Path
 from datetime import timedelta
+from decouple import config
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv(os.path.join(BASE_DIR, 'dotenv'))
+
 ROOT_URLCONF = "stayeasyhotel.urls"
 
-SECRET_KEY = "your-secret-key"
+SECRET_KEY = config('SECRET_KEY')
 
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ["*"]  # allow all hosts for dev (change in production)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*', cast=lambda v: [s.strip() for s in v.split(',')])
 
 # ==============================
 # INSTALLED APPS
@@ -46,15 +51,10 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-# ==============================
-# CORS
-# ==============================
+
 CORS_ALLOW_ALL_ORIGINS = True   # allow React frontend
 CORS_ALLOW_CREDENTIALS = True   # allow cookies/auth headers
 
-# ==============================
-# REST FRAMEWORK (JWT Auth)
-# ==============================
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
@@ -73,14 +73,19 @@ SIMPLE_JWT = {
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "Organic!@123",
-        "HOST": "db.meptojrensoiqfddvqnf.supabase.co",
-        "PORT": "5432",
+        'ENGINE': config('DB_ENGINE', default='django.db.backends.sqlite3'),
+        'NAME': config('DB_NAME', default=BASE_DIR / 'db.sqlite3'),
     }
 }
+
+# Add PostgreSQL-specific settings only if using PostgreSQL
+if config('DB_ENGINE', default='django.db.backends.sqlite3') == 'django.db.backends.postgresql':
+    DATABASES['default'].update({
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT', default='5432'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+    })
 
 
 TEMPLATES = [

@@ -1,6 +1,9 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import axios from 'axios';
 
+// Set the base URL for axios
+axios.defaults.baseURL = 'http://localhost:8000';
+
 interface User {
   id: number;
   username: string;

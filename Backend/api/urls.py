@@ -21,4 +21,8 @@ urlpatterns = [
 
     path('bookings/', BookingList.as_view()),
     path('bookings/<int:pk>/', BookingDetail.as_view()),
+
+    # Add payment endpoints
+    path('payments/create-intent/', views.create_payment_intent, name='create_payment_intent'),
+    path('payments/confirm/', views.confirm_payment, name='confirm_payment'),
 ]

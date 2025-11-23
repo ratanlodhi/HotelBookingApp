@@ -36,12 +36,10 @@ const Checkout: React.FC = () => {
     try {
       // Create booking first
       const bookingPayload = {
-        hotel: bookingData.hotel!.id,
         room: bookingData.room!.id,
         check_in: bookingData.checkIn,
         check_out: bookingData.checkOut,
         guests: bookingData.guests,
-        total_price: bookingData.totalPrice,
         status: 'confirmed',
       };
 

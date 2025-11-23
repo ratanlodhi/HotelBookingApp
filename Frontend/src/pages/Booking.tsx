@@ -21,9 +21,10 @@ const Booking: React.FC = () => {
     }
   }, [bookingData, navigate]);
 
-  useEffect(() => {
-    calculateTotalPrice();
-  }, [bookingFormData, calculateTotalPrice]);
+  // Removed useEffect that causes infinite loop by calling calculateTotalPrice on every render
+  // useEffect(() => {
+  //   calculateTotalPrice();
+  // }, [bookingFormData, calculateTotalPrice]);
 
   const handleBookingUpdate = (data: any) => {
     setBookingFormData({
